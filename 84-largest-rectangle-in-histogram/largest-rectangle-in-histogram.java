@@ -5,6 +5,7 @@ class Solution {
         int n = heights.length;
         int leftMin[] = new int[n];
         int rightMin[] = new int[n];
+        int maxi = Integer.MIN_VALUE;
 
         // First pass to calculate left min
         for(int i = 0; i < n; i++) {
@@ -21,11 +22,6 @@ class Solution {
             if(stack.empty()) rightMin[i] = n - 1;
             else rightMin[i] = stack.peek() - 1;
             stack.push(i);
-        }
-
-        // Third pass to calculate the largest histogram
-        int maxi = Integer.MIN_VALUE;
-        for(int i = 0; i < n; i++) {
             maxi = Math.max(maxi, (rightMin[i] - leftMin[i] + 1) * heights[i]);
         }
 
