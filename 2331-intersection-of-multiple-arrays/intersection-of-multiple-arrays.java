@@ -1,30 +1,20 @@
 class Solution {
-
-    private HashMap<Integer, Integer> getMap(int[][] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for(int[] num: nums) {
-            for(int n: num) {
-                if(map.containsKey(n)) {
-                    map.put(n, map.get(n) + 1);
-                } else map.put(n, 1);
-            }
-        }
-
-        return map;
-    }
-
     public List<Integer> intersection(int[][] nums) {
-        HashMap<Integer, Integer> hm = getMap(nums);
-        List<Integer> list = new ArrayList<>();
- 
-        for(Integer key: hm.keySet()) {
-            if(hm.get(key) == nums.length) {
-                list.add(key);
+        ArrayList<Integer> list = new ArrayList<>();
+
+        int[] freq = new int[1001];
+
+        for(int r = 0; r < nums.length; r++) {
+            for(int c = 0; c < nums[r].length; c++) {
+                freq[nums[r][c]]++;
             }
         }
 
-        Collections.sort(list);
+        int n = nums.length;
+        for(int i = 0; i < freq.length; i++) {
+            if(freq[i] == n) list.add(i);
+        }
+
         return list;
     }
 }
