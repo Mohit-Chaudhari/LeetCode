@@ -1,7 +1,12 @@
 class Solution {
     public int chalkReplacer(int[] chalk, int k) {
-        Long sum = Arrays.stream(chalk).mapToLong(n -> Long.valueOf(n)).sum();
-        Long remainder = k % sum;
+        long sum =  0;
+
+        for(int c: chalk) {
+            sum += c;
+        }
+
+        int remainder = (int) (k % sum);
         
         for(int i = 0; i < chalk.length; i++) {
             if(chalk[i] > remainder) {
