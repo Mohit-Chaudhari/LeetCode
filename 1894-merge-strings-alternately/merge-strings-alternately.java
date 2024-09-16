@@ -9,7 +9,7 @@ class Solution {
         }
 
         if(index1 < word1.length()) result.append(word1.substring(index1));
-        if(index1 < word2.length()) result.append(word2.substring(index2));
+        else result.append(word2.substring(index2));
 
         return result.toString();
     }
