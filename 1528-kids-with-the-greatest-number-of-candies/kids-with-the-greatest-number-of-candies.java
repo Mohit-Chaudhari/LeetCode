@@ -8,8 +8,7 @@ class Solution {
         }
 
         for(int candy: candies) {
-            if(candy + extraCandies >= maxi) result.add(true);
-            else result.add(false);
+            result.add(candy + extraCandies >= maxi);
         }
 
         return result;
