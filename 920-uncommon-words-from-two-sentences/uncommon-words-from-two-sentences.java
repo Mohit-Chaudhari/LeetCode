@@ -11,16 +11,6 @@ class Solution {
         HashMap<String, Integer> words = new HashMap<>();
         int index = 0, counter = 0;
 
-        // for(String s: s1.split(" ")) {
-        //     if(words.containsKey(s)) words.put(s, words.get(s) + 1);
-        //     else words.put(s, 1);
-        // }
-
-        // for(String s: s2.split(" ")) {
-        //     if(words.containsKey(s)) words.put(s, words.get(s) + 1);
-        //     else words.put(s, 1);
-        // }
-
         prepare(words, s1);
         prepare(words, s2);
 
