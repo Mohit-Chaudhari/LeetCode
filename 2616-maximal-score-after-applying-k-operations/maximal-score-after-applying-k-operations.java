@@ -1,6 +1,6 @@
 class Solution {
     public long maxKelements(int[] nums, int k) {
-        PriorityQueue<Integer> q = new PriorityQueue<>(Comparator.reverseOrder());
+        PriorityQueue<Integer> q = new PriorityQueue<>((a, b) -> b - a);
         long score = 0;
 
         for(int num: nums) {
