@@ -10,7 +10,7 @@ class Solution {
         while(k > 0) {
             Integer extract = q.poll();
             score += extract;
-            q.add((int) Math.ceil((double) extract / (double) 3));
+            q.add((extract + 2) / 3);
             k--;
         }
 
