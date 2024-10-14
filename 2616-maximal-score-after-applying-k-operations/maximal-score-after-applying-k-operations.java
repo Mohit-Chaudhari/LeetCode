@@ -8,7 +8,7 @@ class Solution {
         }
 
         while(k > 0) {
-            Integer extract = q.poll();
+            int extract = q.poll();
             score += extract;
             q.add((extract + 2) / 3);
             k--;
