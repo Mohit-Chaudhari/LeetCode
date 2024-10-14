@@ -7,11 +7,10 @@ class Solution {
             q.add(num);
         }
 
-        while(k > 0) {
+        while(k-- > 0) {
             int extract = q.poll();
             score += extract;
             q.add((extract + 2) / 3);
-            k--;
         }
 
         return score;
