@@ -33,9 +33,9 @@ class Solution {
 
             System.out.println(cs);
             pq.add(cs);
-            if(pq.size() > k) pq.poll();
+            if(pq.size() > k) pq.remove();
         }
         if(pq.size() < k) return -1;
-        return pq.poll();
+        return pq.remove();
     }
 }
