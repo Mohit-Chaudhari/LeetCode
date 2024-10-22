@@ -31,7 +31,6 @@ class Solution {
             }
 
             count++;
-            System.out.println(currmax);
             if(currmax > maxi) {
                 level = count;
                 maxi = currmax;
