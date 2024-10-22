@@ -31,7 +31,7 @@ class Solution {
                 cs += node.val;
             }
 
-            System.out.println(cs);
+            // System.out.println(cs);
             pq.offer(cs);
             if(pq.size() > k) pq.remove();
         }
