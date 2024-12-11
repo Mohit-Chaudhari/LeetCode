@@ -1,27 +1,23 @@
 class Solution {
+
+    private HashMap<String, Integer> getMap(String[] str) {
+        HashMap<String, Integer> map = new HashMap<>();
+
+        for(String s: str) {
+            if(map.containsKey(s)) map.put(s, map.get(s) + 1);
+            else map.put(s, 1);
+        }
+
+        return map;
+    }
+
     public boolean isAnagram(String s, String t) {
-        String[] sc = s.split("");
-        String[] tc = t.split("");
+        String[] sstr = s.split("");
+        String[] tstr = t.split("");
 
-        HashMap<String, Integer> shm = new HashMap<>();
-        HashMap<String, Integer> thm = new HashMap<>();
+        HashMap<String, Integer> smap = getMap(sstr);
+        HashMap<String, Integer> tmap = getMap(tstr);
 
-        for(String c: sc) {
-            if(shm.containsKey(c)) {
-                shm.put(c, shm.get(c) + 1);
-            } else {
-                shm.put(c, 1);
-            }
-        }
-
-        for(String c: tc) {
-            if(thm.containsKey(c)) {
-                thm.put(c, thm.get(c) + 1);
-            } else {
-                thm.put(c, 1);
-            }
-        }
-
-        return shm.equals(thm);
+        return smap.equals(tmap);        
     }
 }
