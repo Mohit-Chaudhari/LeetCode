@@ -15,8 +15,6 @@
  */
 class Solution {
     public void flatten(TreeNode root) {
-        if(root == null) return;
-
         TreeNode current = root;
 
         while(current != null) {
