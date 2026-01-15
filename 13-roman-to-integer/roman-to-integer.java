@@ -13,9 +13,7 @@ class Solution {
 
         for(int i = 0; i < s.length(); i++) {
             if(i + 1 < s.length() && roman.get(s.charAt(i)) < roman.get(s.charAt(i + 1))) {
-                // ans += (roman.get(s.charAt(i + 1)) - roman.get(s.charAt(i)));
-                ans -= roman.get(s.charAt(i));
-                ans += roman.get(s.charAt(i + 1));
+                ans += (roman.get(s.charAt(i + 1)) - roman.get(s.charAt(i)));
                 i++;
             } else {
                 ans += roman.get(s.charAt(i));
